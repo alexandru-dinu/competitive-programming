@@ -1,8 +1,13 @@
-#!/usr/bin/env zsh
-
-run_sol () {
+run-cpp () {
     local prog="$1"
-    make $prog
-    diff <( ./$prog < "in" ) "out" -s
-    rm -v $prog
+    g++ -o $prog $prog.cpp
+    diff <( ./$prog < "in" ) "out"
+    rm $prog
+}
+
+run-rust () {
+    local prog="$1"
+    rustc $prog.rs
+    diff <( ./$prog < "in" ) "out"
+    rm $prog
 }

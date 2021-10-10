@@ -2,52 +2,33 @@
 
 from pathlib import Path
 from argparse import ArgumentParser
+from functools import partial
 
 
-CODE = """
-#include <iostream>
-#include <bits/stdc++.h>
-
-using namespace std;
-
-#define ll long long
-#define output_t void
-
-output_t solve(int tc) {
-    ;
-
-    return;
-}
-
-int main() {
-    ios::sync_with_stdio(0);
-    cin.tie(NULL);
-
-    int tc;
-
-    //tc = 1;
-    cin >> tc;
-
-    while (tc--) {
-        solve(tc);
-    }
-
-    return 0;
-}
-""".strip()
-
-
-def path_ensure_new(arg: str) -> Path:
+def path_ensure(arg: str, exists_ok: bool) -> Path:
     path = Path(arg)
-    if path.exists():
-        print(f'ERROR: "{arg}" already exists.')
+    if (e := path.exists()) != exists_ok:
+        print(f'ERROR: "{arg}" exists={e}')
         exit(1)
     return path
 
 
-parser = ArgumentParser()
-parser.add_argument("--path", type=path_ensure_new, required=True)
-args = parser.parse_args()
+def main():
+    parser = ArgumentParser()
+    parser.add_argument(
+        "--path", type=partial(path_ensure, exists_ok=False), required=True
+    )
+    parser.add_argument(
+        "--code", type=partial(path_ensure, exists_ok=True), required=True
+    )
+    args = parser.parse_args()
 
-with open(args.path, "wt") as fp:
-    fp.write(CODE)
+    with open(args.code, "rt") as fp:
+        code = fp.read().strip()
+
+    with open(args.path, "wt") as fp:
+        fp.write(code)
+
+
+if __name__ == "__main__":
+    main()
