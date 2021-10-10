@@ -1,11 +1,12 @@
-#include <iostream>
 #include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 
 #define ll long long
 
-bool solve() {
+bool solve()
+{
     int n;
     cin >> n;
     int a[n], b[n];
@@ -43,7 +44,8 @@ bool solve() {
     return true;
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(0);
     cin.tie(NULL);
 

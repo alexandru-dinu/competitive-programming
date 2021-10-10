@@ -1,6 +1,6 @@
+#include <bits/stdc++.h>
 #include <iostream>
 #include <optional>
-#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -9,7 +9,8 @@ using namespace std;
 
 using entry_t = pair<optional<int>, optional<int>>;
 
-sol_t solve(int tc) {
+sol_t solve(int tc)
+{
     int n;
     cin >> n;
 
@@ -47,7 +48,7 @@ sol_t solve(int tc) {
 
     stack<ll> ans;
     ans.push(first);
-    for (int i = 0; i < n-1; i++) {
+    for (int i = 0; i < n - 1; i++) {
         first = g[first];
         ans.push(first);
     }
@@ -62,14 +63,15 @@ sol_t solve(int tc) {
     return;
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(0);
     cin.tie(NULL);
 
     int tc;
 
     tc = 1;
-    //cin >> tc;
+    // cin >> tc;
 
     while (tc--) {
         solve(tc);

@@ -2,7 +2,8 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
     int ans = -1;
 
     for (int x, i = 0; i < 25; i++) {

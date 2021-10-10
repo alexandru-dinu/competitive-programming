@@ -1,12 +1,13 @@
-#include <iostream>
 #include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 
 #define ll long long
 #define sol_t void
 
-sol_t solve(int tc) {
+sol_t solve(int tc)
+{
     ll l, r;
     cin >> l >> r;
 
@@ -14,24 +15,24 @@ sol_t solve(int tc) {
     while (i <= max(l, r)) {
         if (l >= r) {
             l -= i;
-        }
-        else {
+        } else {
             r -= i;
         }
         ++i;
     }
 
-    printf("Case: #%d: %ld %ld %ld\n", tc, i-1, l, r);
+    printf("Case: #%d: %ld %ld %ld\n", tc, i - 1, l, r);
     return;
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(0);
     cin.tie(NULL);
 
     int tc;
 
-    //tc = 1;
+    // tc = 1;
     cin >> tc;
 
     for (int t = 1; t <= tc; ++t) {

@@ -1,5 +1,6 @@
-bool isAnagram(string s, string t) {
-    int count[26] = {0};
+bool isAnagram(string s, string t)
+{
+    int count[26] = { 0 };
 
     for (char c : s)
         count[c - 'a']++;

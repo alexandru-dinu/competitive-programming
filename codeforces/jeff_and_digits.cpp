@@ -1,11 +1,12 @@
-#include <iostream>
 #include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 
 #define ll long long
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(0);
     cin.tie(NULL);
 
@@ -21,19 +22,17 @@ int main() {
 
     if (m[0] == 0) {
         cout << -1;
-    }
-    else {
+    } else {
         int t = m[5] - m[5] % 9;
         if (t == 0) {
             cout << 0;
-        }
-        else {
+        } else {
             for (int i = 0; i < t; i++) {
                 cout << 5;
             }
             for (int i = 0; i < m[0]; i++) {
-               cout << 0;
-           }
+                cout << 0;
+            }
         }
     }
 

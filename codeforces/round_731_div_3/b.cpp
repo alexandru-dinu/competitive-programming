@@ -1,12 +1,13 @@
-#include <iostream>
 #include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 
 #define ll long long
 #define output_t void
 
-output_t solve(int tc) {
+output_t solve(int tc)
+{
     string s;
     cin >> s;
 
@@ -29,11 +30,9 @@ output_t solve(int tc) {
 
         if (0 <= l && s[l] == c) {
             --l;
-        }
-        else if (h < n && s[h] == c) {
+        } else if (h < n && s[h] == c) {
             ++h;
-        }
-        else {
+        } else {
             cout << "NO\n";
             return;
         }
@@ -42,13 +41,14 @@ output_t solve(int tc) {
     cout << "YES\n";
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(0);
     cin.tie(NULL);
 
     int tc;
 
-    //tc = 1;
+    // tc = 1;
     cin >> tc;
 
     while (tc--) {

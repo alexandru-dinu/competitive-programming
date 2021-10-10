@@ -1,8 +1,8 @@
+#include <algorithm>
 #include <cmath>
 #include <cstdio>
-#include <vector>
 #include <iostream>
-#include <algorithm>
+#include <vector>
 
 using namespace std;
 
@@ -37,30 +37,29 @@ int _find_kth_min(vector<int> &arr, int l, int r, int k)
         return _find_kth_min(arr, pos + 1, r, k - pos + l - 1);
 }
 
-int find_kth_min(vector<int>& nums, int k)
+int find_kth_min(vector<int> &nums, int k)
 {
     const int n = nums.size();
 
     return _find_kth_min(nums, 0, n - 1, k);
 }
 
-int find_kth_max(vector<int>& nums, int k)
+int find_kth_max(vector<int> &nums, int k)
 {
     const int n = nums.size();
 
-    for (int i = 0; i < n; nums[i] *= -1, i++);
+    for (int i = 0; i < n; nums[i] *= -1, i++)
+        ;
 
     return -1 * _find_kth_min(nums, 0, n - 1, k);
 }
 
-int find_kth_max2(vector<int>& nums, int k)
+int find_kth_max2(vector<int> &nums, int k)
 {
     std::nth_element(nums.begin(),
                      nums.begin() + k - 1,
                      nums.end(),
-                     [](const int& i1, const int& i2) {
-                        return i2 < i1;
-                     });
+                     [](const int &i1, const int &i2) { return i2 < i1; });
 
     return nums[k - 1];
 }

@@ -1,5 +1,5 @@
-#include <iostream>
 #include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 
@@ -11,7 +11,8 @@ using namespace std;
  * 2 = --
  */
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(0);
     cin.tie(NULL);
 
@@ -24,10 +25,9 @@ int main() {
 
     while (i < s.length()) {
         if (s[i] == '-') {
-            v.push_back((s[i+1] == '.') ? 1 : 2);
+            v.push_back((s[i + 1] == '.') ? 1 : 2);
             i += 2;
-        }
-        else {
+        } else {
             v.push_back(0);
             i++;
         }

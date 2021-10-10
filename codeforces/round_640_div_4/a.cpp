@@ -1,12 +1,13 @@
-#include <iostream>
 #include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 
 #define ll long long
 #define sol_t void
 
-sol_t solve(int tc) {
+sol_t solve(int tc)
+{
     int n;
     cin >> n;
 
@@ -30,13 +31,14 @@ sol_t solve(int tc) {
     return;
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(0);
     cin.tie(NULL);
 
     int tc;
 
-    //tc = 1;
+    // tc = 1;
     cin >> tc;
 
     while (tc--) {

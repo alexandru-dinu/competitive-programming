@@ -1,11 +1,12 @@
-#include <iostream>
 #include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 
 #define ll long long
 
-void solve(int tc) {
+void solve(int tc)
+{
     ll n;
     int k;
     cin >> n >> k;
@@ -47,13 +48,14 @@ void solve(int tc) {
     return;
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(0);
     cin.tie(NULL);
 
     int tc;
 
-    //tc = 1;
+    // tc = 1;
     cin >> tc;
 
     while (tc--) {

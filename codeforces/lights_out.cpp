@@ -1,11 +1,12 @@
-#include <iostream>
 #include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 
 #define ll long long
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(0);
     cin.tie(NULL);
 
@@ -20,13 +21,13 @@ int main() {
 
             m[i][j] = 1 - m[i][j];
             if (i >= 1)
-                m[i-1][j] = 1 - m[i-1][j];
+                m[i - 1][j] = 1 - m[i - 1][j];
             if (i <= 1)
-                m[i+1][j] = 1 - m[i+1][j];
+                m[i + 1][j] = 1 - m[i + 1][j];
             if (j >= 1)
-                m[i][j-1] = 1 - m[i][j-1];
+                m[i][j - 1] = 1 - m[i][j - 1];
             if (j <= 1)
-                m[i][j+1] = 1 - m[i][j+1];
+                m[i][j + 1] = 1 - m[i][j + 1];
         }
     }
 

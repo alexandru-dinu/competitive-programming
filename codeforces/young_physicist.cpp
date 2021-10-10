@@ -2,7 +2,8 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
     int n, x, y, z, sx(0), sy(0), sz(0);
     cin >> n;
 

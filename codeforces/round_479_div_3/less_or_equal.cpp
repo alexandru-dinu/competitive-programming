@@ -1,5 +1,5 @@
-#include <iostream>
 #include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 
@@ -8,7 +8,8 @@ using namespace std;
 
 #define LIM 1000000000
 
-sol_t solve(int tc) {
+sol_t solve(int tc)
+{
     int n, k;
     cin >> n >> k;
 
@@ -21,7 +22,7 @@ sol_t solve(int tc) {
     if (k == 0)
         return (v[0] == 1) ? -1 : v[0] - 1;
 
-    int ans = v[k-1], cnt = 0;
+    int ans = v[k - 1], cnt = 0;
     for (int i = 0; i < n; i++) {
         if (v[i] > ans)
             break;
@@ -34,14 +35,15 @@ sol_t solve(int tc) {
     return ans;
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(0);
     cin.tie(NULL);
 
     int tc;
 
     tc = 1;
-    //cin >> tc;
+    // cin >> tc;
 
     while (tc--) {
         cout << solve(tc) << "\n";

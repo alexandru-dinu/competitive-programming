@@ -1,13 +1,14 @@
-#include <iostream>
 #include <algorithm>
-#include <string>
 #include <bits/stdc++.h>
+#include <iostream>
+#include <string>
 
 using namespace std;
 
 #define ll long long
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(0);
     cin.tie(NULL);
 

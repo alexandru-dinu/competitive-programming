@@ -1,11 +1,12 @@
-#include <iostream>
 #include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 
 #define ll long long
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(0);
     cin.tie(NULL);
 
@@ -16,12 +17,11 @@ int main() {
         for (int i = 1; i <= n; i++) {
             cout << i << " ";
         }
-    }
-    else {
-        for (int i = k+1; i >= 1; i--) {
+    } else {
+        for (int i = k + 1; i >= 1; i--) {
             cout << i << " ";
         }
-        for (int i = k+2; i <= n; i++) {
+        for (int i = k + 2; i <= n; i++) {
             cout << i << " ";
         }
     }

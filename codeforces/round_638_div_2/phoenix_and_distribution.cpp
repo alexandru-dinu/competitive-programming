@@ -1,11 +1,12 @@
-#include <iostream>
 #include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 
 #define ll long long
 
-void solve() {
+void solve()
+{
     int n, k;
     cin >> n >> k;
 
@@ -16,27 +17,28 @@ void solve() {
 
     // if smallest k letters are not equal,
     // answer is the k-th smallest letter
-    if (s[0] != s[k-1]) {
-        cout << s[k-1] << "\n";
+    if (s[0] != s[k - 1]) {
+        cout << s[k - 1] << "\n";
         return;
     }
 
-    if (s[k] != s[n-1])
+    if (s[k] != s[n - 1])
         cout << s.substr(k - 1);
     else
-        cout << s[k-1] << string((n-1)/k, s[n-1]);
+        cout << s[k - 1] << string((n - 1) / k, s[n - 1]);
 
     cout << "\n";
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(0);
     cin.tie(NULL);
 
     int t;
     cin >> t;
 
-    while(t--)
+    while (t--)
         solve();
 
     return 0;

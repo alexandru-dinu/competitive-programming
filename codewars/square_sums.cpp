@@ -1,5 +1,5 @@
-#include <iostream>
 #include <bits/stdc++.h>
+#include <iostream>
 
 /*
  * given an integer number N in [2, 1000], return an array of integers 1..N
@@ -10,13 +10,12 @@
  * - https://www.youtube.com/watch?v=G1m7goLCJDY
  */
 
+using num_t = int;
+using set_t = std::set<num_t>;
+using graph_t = std::unordered_map<num_t, set_t>;
 
-using num_t    = int;
-using set_t    = std::set<num_t>;
-using graph_t  = std::unordered_map<num_t, set_t>;
-
-
-inline void add_node(num_t node, graph_t& g, const set_t& squares) {
+inline void add_node(num_t node, graph_t &g, const set_t &squares)
+{
     g[node] = set_t();
 
     for (auto it = g.begin(); it != g.end(); ++it) {
@@ -27,7 +26,10 @@ inline void add_node(num_t node, graph_t& g, const set_t& squares) {
     }
 }
 
-inline std::vector<num_t> get_path(graph_t& g, num_t start, std::vector<num_t> acc) {
+inline std::vector<num_t> get_path(graph_t &g,
+                                   num_t start,
+                                   std::vector<num_t> acc)
+{
     if (std::find(acc.begin(), acc.end(), start) != acc.end())
         return {};
 
@@ -36,7 +38,7 @@ inline std::vector<num_t> get_path(graph_t& g, num_t start, std::vector<num_t> a
     if (acc.size() == g.size())
         return acc;
 
-    for (auto& next : g[start]) {
+    for (auto &next : g[start]) {
         auto p = get_path(g, next, acc);
         if (p.size() > 0)
             return p;
@@ -69,12 +71,13 @@ std::vector<int> square_sums_row(int N)
     return {};
 }
 
-int main(int, char** argv) {
+int main(int, char **argv)
+{
     int N = std::stoi(argv[1]);
 
     auto sol = square_sums_row(N);
 
-    for (auto x: sol)
+    for (auto x : sol)
         std::cout << x << " ";
     std::cout << "\n";
 

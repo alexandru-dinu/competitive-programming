@@ -1,14 +1,15 @@
-#include <iostream>
 #include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 
 const int MAXN = 1e5;
 
-using pair_t  = pair<int, int>;
+using pair_t = pair<int, int>;
 using graph_t = vector<list<pair_t>>;
 
-list<int> dijkstra(int s, int t, const graph_t& g) {
+list<int> dijkstra(int s, int t, const graph_t &g)
+{
     int n = g.size();
 
     bitset<MAXN> visited;
@@ -34,7 +35,7 @@ list<int> dijkstra(int s, int t, const graph_t& g) {
 
         visited[u] = true;
 
-        for (const pair_t& p : g[u]) {
+        for (const pair_t &p : g[u]) {
             int v = p.first;
 
             if (visited[v])
@@ -55,38 +56,39 @@ list<int> dijkstra(int s, int t, const graph_t& g) {
     int u = t;
 
     if (!has_path or (prev[u] == -1 and u != s))
-        return {-1};
+        return { -1 };
 
     list<int> path;
 
     while (u != -1) {
-        path.push_front(u+1);
+        path.push_front(u + 1);
         u = prev[u];
     }
 
     return path;
 }
 
-int main() {
+int main()
+{
     int n, m;
     cin >> n >> m;
 
-    int s = 0;   // source
-    int t = n-1; // destination
+    int s = 0;     // source
+    int t = n - 1; // destination
 
     graph_t g(n);
 
     for (int i = 0; i < m; i++) {
         int u, v, w;
         cin >> u >> v >> w;
-        g[u-1].push_back(make_pair(v-1, w));
-        g[v-1].push_back(make_pair(u-1, w));
+        g[u - 1].push_back(make_pair(v - 1, w));
+        g[v - 1].push_back(make_pair(u - 1, w));
     }
 
     list<int> shortest_path = dijkstra(s, t, g);
 
     for (int u : shortest_path)
-        cout << u  << " ";
+        cout << u << " ";
     cout << endl;
 
     return 0;

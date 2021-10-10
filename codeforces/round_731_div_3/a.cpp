@@ -1,5 +1,5 @@
-#include <iostream>
 #include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 
@@ -8,19 +8,23 @@ using namespace std;
 
 using point_t = pair<int, int>;
 
-bool ordered(int a, int b, int c) {
+bool ordered(int a, int b, int c)
+{
     return (a < b && b < c) || (a > b && b > c);
 }
 
-bool same_row(point_t a, point_t b, point_t c) {
+bool same_row(point_t a, point_t b, point_t c)
+{
     return (a.second == b.second) and (b.second == c.second);
 }
 
-bool same_col(point_t a, point_t b, point_t c) {
+bool same_col(point_t a, point_t b, point_t c)
+{
     return (a.first == b.first) and (b.first == c.first);
 }
 
-output_t solve(int tc) {
+output_t solve(int tc)
+{
     point_t a, b, f;
 
     cin >> a.first >> a.second;
@@ -37,13 +41,14 @@ output_t solve(int tc) {
     cout << ans << "\n";
 }
 
-int main() {
+int main()
+{
     ios::sync_with_stdio(0);
     cin.tie(NULL);
 
     int tc;
 
-    //tc = 1;
+    // tc = 1;
     cin >> tc;
 
     while (tc--) {
