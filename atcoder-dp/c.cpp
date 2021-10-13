@@ -5,6 +5,8 @@ using namespace std;
 
 #define ll long long
 
+// Vacation
+
 void solve()
 {
     int n;

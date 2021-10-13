@@ -5,6 +5,8 @@ using namespace std;
 
 #define ll long long
 
+// Frog (1)
+
 void solve()
 {
     int n;

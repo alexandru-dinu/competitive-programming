@@ -5,7 +5,9 @@ using namespace std;
 
 #define ll long long
 
+// Frog (2)
 // generalization of problem A (where K = 2)
+
 void solve()
 {
     int n, k;
