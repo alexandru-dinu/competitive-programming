@@ -8,3 +8,4 @@ PointerAlignment: Right
 BinPackParameters: false
 AlwaysBreakAfterReturnType: None
 AlwaysBreakAfterDefinitionReturnType: None
+AllowShortFunctionsOnASingleLine: false

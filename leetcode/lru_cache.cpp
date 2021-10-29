@@ -10,8 +10,10 @@ class Node
       , prev(NULL)
       , next(NULL)
     {}
-    Node() {}
-    ~Node() {}
+    Node()
+    {}
+    ~Node()
+    {}
 };
 
 class LRUCache
