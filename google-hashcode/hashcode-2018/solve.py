@@ -1,8 +1,7 @@
-from copy import deepcopy
-import numpy as np
-from functools import reduce
 import sys
+from functools import reduce
 
+import numpy as np
 
 with open(sys.argv[1]) as file:
     R, C, F, N, B, T = list(map(int, file.readline().strip().split(" ")))

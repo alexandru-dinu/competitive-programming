@@ -1,5 +1,5 @@
-from operator import xor
 from functools import reduce
+from operator import xor
 
 input()
 xs = list(map(int, input().strip().split()))
